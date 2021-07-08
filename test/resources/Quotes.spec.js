@@ -126,6 +126,7 @@ describe('Quotes Resource', () => {
         data: {},
         settings: {},
       });
+      console.log(result);
     });
   });
 });

@@ -1024,7 +1024,7 @@ declare module 'stripe' {
       expand?: Array<string>;
     }
 
-    interface QuoteFinalizeParams {
+    interface QuoteFinalizeQuoteParams {
       /**
        * Specifies which fields in the response should be expanded.
        */
@@ -1133,12 +1133,12 @@ declare module 'stripe' {
       /**
        * Finalizes the quote.
        */
-      finalize(
+      finalizeQuote(
         id: string,
-        params?: QuoteFinalizeParams,
+        params?: QuoteFinalizeQuoteParams,
         options?: RequestOptions
       ): Promise<Stripe.Response<Stripe.Quote>>;
-      finalize(
+      finalizeQuote(
         id: string,
         options?: RequestOptions
       ): Promise<Stripe.Response<Stripe.Quote>>;
@@ -1163,11 +1163,8 @@ declare module 'stripe' {
         id: string,
         params?: QuotePdfParams,
         options?: RequestOptions
-      ): Promise<Stripe.Response<string>>;
-      pdf(
-        id: string,
-        options?: RequestOptions
-      ): Promise<Stripe.Response<string>>;
+      ): Promise<StripeStreamResponse>;
+      pdf(id: string, options?: RequestOptions): Promise<StripeStreamResponse>;
     }
   }
 }
